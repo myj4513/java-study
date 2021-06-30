@@ -9,13 +9,13 @@ public class MyVector implements List{
 	
 	public MyVector(int capacity) {
 		if(capacity<0) 
-			throw new IllegalArgumentException("À¯È¿ÇÏÁö ¾ÊÀº °ªÀÔ´Ï´Ù.: "+capacity);
+			throw new IllegalArgumentException("ï¿½ï¿½È¿ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ô´Ï´ï¿½.: "+capacity);
 		this.capacity = capacity;
 		data = new Object[capacity];
 	}
 	
 	public MyVector() {
-		this.capacity = capacity;
+		this(10);
 	}
 	
 	public void ensureCapacity(int minCapacity) {
@@ -31,7 +31,7 @@ public class MyVector implements List{
 	
 	public Object get(int index) {
 		if(index<0 || index>= size)
-			throw new IndexOutOfBoundsException("¹üÀ§¸¦ ¹þ¾î³µ½À´Ï´Ù.");
+			throw new IndexOutOfBoundsException("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½î³µï¿½ï¿½ï¿½Ï´ï¿½.");
 		return data[index];
 	}
 	
@@ -39,7 +39,7 @@ public class MyVector implements List{
 		Object oldObj = null;
 		
 		if(index<0 || index>= size)
-			throw new IndexOutOfBoundsException("¹üÀ§¸¦ ¹þ¾î³µ½À´Ï´Ù.");
+			throw new IndexOutOfBoundsException("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½î³µï¿½ï¿½ï¿½Ï´ï¿½.");
 		oldObj = data[index];
 		if(index != size-1)
 			System.arraycopy(data, index+1, data, index, size-index-1);
@@ -143,7 +143,7 @@ public class MyVector implements List{
 	@Override
 	public Object set(int index, Object element) {
 		if(index<0||index>=size)
-			throw new IndexOutOfBoundsException("¹üÀ§¸¦ ¹þ¾î³µ½À´Ï´Ù.");
+			throw new IndexOutOfBoundsException("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½î³µï¿½ï¿½ï¿½Ï´ï¿½.");
 		data[index] = element;
 		return data[index];
 	}
@@ -151,7 +151,7 @@ public class MyVector implements List{
 	@Override
 	public void add(int index, Object element) {
 		if(index<0||index>=size)
-			throw new IndexOutOfBoundsException("¹üÀ§¸¦ ¹þ¾î³µ½À´Ï´Ù.");
+			throw new IndexOutOfBoundsException("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½î³µï¿½ï¿½ï¿½Ï´ï¿½.");
 		ensureCapacity(size+1);
 		System.arraycopy(data, index, data, index+1, size-index);
 		data[index] = element;
