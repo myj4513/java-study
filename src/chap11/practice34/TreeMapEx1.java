@@ -10,8 +10,8 @@ public class TreeMapEx1 {
 
         for(int i=0;i<data.length;i++){
             if(map.containsKey(data[i])){
-                int num = Integer.parseInt(map.get(data[i]).toString());
-                map.put(data[i], num+1);
+                int num = Integer.parseInt((String)map.get(data[i]));
+                map.put(data[i], num+1+"");
             }else{
                 map.put(data[i], 1+"");
             }
