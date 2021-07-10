@@ -6,9 +6,9 @@ public class Exercise11_7 {
     public static void main(String[] args) {
         ArrayList list = new ArrayList();
         list.add(new Student("홍길동", 5,1,100,100,100));
-        list.add(new Student("남궁성", 1,2,90,70,80));
+        list.add(new Student("남궁성", 1,1,90,70,80));
         list.add(new Student("김자바", 3,3,80,80,90));
-        list.add(new Student("이자바", 2,4,70,90,70));
+        list.add(new Student("이자바", 1,2,70,90,70));
         list.add(new Student("안자바", 4,5,60,100,80));
 
         Collections.sort(list, new BanNoAscending());
@@ -26,6 +26,9 @@ class BanNoAscending implements Comparator{
         if(o1 instanceof Student && o2 instanceof Student){
             Student s1 = (Student)o1;
             Student s2 = (Student)o2;
+            if(s1.ban==s2.ban){
+                return s1.no - s2.no;
+            }
             return s1.ban - s2.ban;
         }
         return -1;

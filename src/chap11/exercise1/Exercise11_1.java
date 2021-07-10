@@ -15,14 +15,15 @@ public class Exercise11_1 {
             list2.add(i+3);
         }
 
-        hab.addAll(list1);
-        hab.addAll(list2);
-
         cha.addAll(list1);
         cha.removeAll(list2);
 
         kyo.addAll(list1);
         kyo.retainAll(list2);
+
+        hab.addAll(list1);
+        hab.removeAll(kyo);
+        hab.addAll(list2);
 
         System.out.println("list1="+list1);
         System.out.println("list2="+list2);

@@ -34,15 +34,15 @@ public class Exercise11_14 {
         System.out.println();
         System.out.println("3. 프로그램 종료");
         System.out.println();
-        System.out.println("원하는 메뉴를 선택하세요.(1~3) : ");
+        System.out.print("원하는 메뉴를 선택하세요.(1~3) : ");
         int menu = 0;
         while(true){
-            menu = s.nextInt();
+            menu = Integer.parseInt(s.nextLine());
             if(1<=menu && menu<=3)
                 break;
             else
                 System.out.println("메뉴를 잘못 선택하셨습니다. 다시 입력해주세요.");
-                System.out.println("원하는 메뉴를 선택하세요.(1~3) : ");
+                System.out.print("원하는 메뉴를 선택하세요.(1~3) : ");
         }
         return menu;
     }
@@ -53,10 +53,19 @@ public class Exercise11_14 {
         System.out.println("입력을 마치려면 q를 입력하세요. 메인화면으로 돌아갑니다.");
 
         while(true){
-            System.out.println(">>");
-            String str = s.nextLine();
-
-
+            System.out.print(">>");
+            String[] str = s.nextLine().split(",");
+            try{
+                if(str[0].charAt(0)=='q' || str[0].charAt(0)=='Q')
+                    return;
+                else{
+                    record.add(new Student(str[0],Integer.parseInt(str[1]),Integer.parseInt(str[2]),
+                            Integer.parseInt(str[3]),Integer.parseInt(str[4]),Integer.parseInt(str[5])));
+                    System.out.println("잘입력되었습니다. 입력을 마치려면 q를 입력하세요.");
+                }
+            }catch(Exception e){
+                System.out.println("입력 오류입니다. 이름, 반, 번호, 국어성적, 영어성적, 수학성적'의 순서로 공백없이 입력하세요.");
+            }
         }
     }
 

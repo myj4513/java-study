@@ -27,17 +27,17 @@ public class Exercise11_9 {
         int prevTotal = -1;
         int length = list.size();
 
-        for(int i=0;i<length;i++){
+        for(int i=0,n=0;i<length;i++,n++){
             Student s = (Student)list.get(i);
             if(s.ban != prevBan){
-                prevBan = -1;
-                prevRank = 0;
+                prevRank = -1;
                 prevTotal = -1;
+                n=0;
             }
             if(s.total == prevTotal){
                 s.classRank = prevRank;
             }else{
-                s.classRank = prevRank + 1;
+                s.classRank = n + 1;
             }
             prevBan = s.ban;
             prevRank = s.classRank;
