@@ -3,6 +3,7 @@ package chap13.exercise5;
 public class Exercise13_5 {
     public static void main(String[] args) throws Exception{
         Thread3 th1 = new Thread3();
+        //th1.setDaemon(true);
         th1.start();
 
         try{

@@ -1,10 +1,16 @@
 package chap13.exercise6;
 
 public class Exercise13_6 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
         Thread4 th1 = new Thread4();
         th1.setDaemon(true);
         th1.start();
+
+        try{
+            Thread.sleep(5000);
+        } catch(InterruptedException e){}
+
+        throw new Exception("꽝~!!!");
     }
 }
 
