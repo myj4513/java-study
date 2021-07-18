@@ -19,7 +19,7 @@ class Exercise13_9_1 extends Thread{
         while(i!=0 && !isInterrupted()){
             System.out.println(i--);
             try{
-                Thread.sleep(1000);
+                Thread.sleep(1000); //time out으로 일시정지 상태에서 벗어날 때에는 InterruptedException이 발생하지 않음
             } catch(InterruptedException e){
                 interrupt();
             }
